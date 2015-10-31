@@ -6,10 +6,10 @@ Depending on the geometry of the problem at hand, the included surface normal fi
 ### Important pages
 * [Download latest version v1.0!](https://github.com/FranckLab/3D-VTFM/releases)
 * [Example data](https://drive.google.com/folderview?id=0ByhZqlrbo5srQ1RDQ3pvZjVRSUU&usp=sharing)
-* [FAQ](https://github.com/FranckLab/FIDVC/blob/master/README.md#faq)
+* [FAQ](https://github.com/FranckLab/3D-VTFM#faq)
 * [Questions/Issues](https://github.com/FranckLab/3D-VTFM/issues)
 * [Bug Fixes/history](https://github.com/FranckLab/3D-VTFM/wiki/Bug-Fixes!)
-* [Cite]()
+* [Cite](https://github.com/FranckLab/3D-VTFM#cite)
 * [Franck Lab](http://franck.engin.brown.edu)
  
 ## Running 3D-VTFM
@@ -26,7 +26,7 @@ To run you need a compatible C compiler. Please see
 
 ### Running included example case
 1. Make sure that the main files and the supplemental m files (from file exchange) are added to the path in Matlab.
-2. Download and save the [example volume data](https://drive.google.com/folderview?id=0ByhZqlrbo5srSmU2ZW1TOXpfVkE&usp=sharing) in the example folder. 
+2. Download and save the [example volume data](https://drive.google.com/folderview?id=0ByhZqlrbo5srQ1RDQ3pvZjVRSUU&usp=sharing) in the example folder. 
 3. Run the exampleRunFile.m file
 
 ### Health warning!
@@ -47,7 +47,7 @@ FIDVC in the 3D-VTFM requires a 3D stack to be read in, which depending on the v
 
 * Example Run files
  - exampleRunFile.m
- - [example volume data](https://drive.google.com/folderview?id=0ByhZqlrbo5srSmU2ZW1TOXpfVkE&usp=sharing) (vol00.mat, vol01.mat).
+ - [example volume data](https://drive.google.com/folderview?id=0ByhZqlrbo5srQ1RDQ3pvZjVRSUU&usp=sharing) (vol00.mat, vol01.mat).
 
 ## FAQ
 **What are the requirements for the input 3D image stack?**
@@ -73,4 +73,4 @@ If used please cite:
 ```
 
 ## Contact and support
-For questions, please first refer to [FAQ](https://github.com/FranckLab/FIDVC#faq) and [Questions/Issues](https://github.com/FranckLab/FIDVC/issues). Add a new question if similar issue hasn't been reported. We shall help you at the earliest. The author's contact information can be found at [Franck Lab](http://franck.engin.brown.edu).
+For questions, please first refer to [FAQ](https://github.com/FranckLab/3D-VTFM#faq) and [Questions/Issues](https://github.com/FranckLab/3D-VTFM/issues). Add a new question if similar issue hasn't been reported. We shall help you at the earliest. The author's contact information can be found at [Franck Lab](http://franck.engin.brown.edu).
