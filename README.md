@@ -1,7 +1,6 @@
-This repositry contains the Matlab m-files to run our LD 3D TFM algorithm. The first part of the package includes the FIDVC algorithm, which is how the 3D displacement fields are calculated. The second part of the code package includes converting those displacement fields into 3D surface tractions as described in [Toyjanova, Bar-Kochba et al., PloS One, 2014](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0090976).
+This repositry contains the Matlab m-files to run our LD 3D TFM algorithm. The first part of the package includes the FIDVC algorithm, which is how the 3D displacement fields are calculated. The second part of the code package includes converting those displacement fields into 3D surface tractions as described in [Toyjanova, Hannen et al., Soft Matter, 2014](http://pubs.rsc.org/en/content/articlelanding/2014/sm/c4sm01271b#!divAbstract).
 
-Depending on the geometry of the problem at hand, the included surface normal finder algorithm might need additional modification for traction calculation in fully embedded systems or on arbitrary geometries. Alternatively, the user can supply the his/her own point-by-point surface normals to calculate the surface tractions (e.g., Matlab has several already existing image processing options for extracting surface normals from rendered surfaces).
-
+Most of the Matlab file structures are very similar to our LD 3D TFM algorithm. The current code structure is set up to compute viscoelastic tractions based on the constitutive model depicted in our Soft Matter paper ([Toyjanova, Hannen et al., Soft Matter, 2014](http://pubs.rsc.org/en/content/articlelanding/2014/sm/c4sm01271b#!divAbstract)), but the user can simply tune the code to fit the specifics of their mechanical viscoelastic model. Feel free to contact us with questions or with help on implementing a user-specific model into our 3D VTFM code structure. 
 
 ### Important pages
 * [Download latest version v1.0!](https://github.com/FranckLab/3D-VTFM/releases)
@@ -57,7 +56,7 @@ Please refer to [input 3D Image Stack Requirements](https://github.com/FranckLab
 
 ## Cite
 If used please cite:
-[Toyjanova J., Hannen, E., Bar-Kochba E., Darling, E.M., Henann, D.L., and Franck, C., (2014) 3D Viscoelastic Traction Force Microscopy. Soft Matter doi: 10.1039/c4sm01271b](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0090976)
+[Toyjanova J., Hannen, E., Bar-Kochba E., Darling, E.M., Henann, D.L., and Franck, C., (2014) 3D Viscoelastic Traction Force Microscopy. Soft Matter doi: 10.1039/c4sm01271b](http://pubs.rsc.org/en/content/articlelanding/2014/sm/c4sm01271b#!divAbstract)
 
 ```bibtex
 @article{toyjanova20143d,
