@@ -1,17 +1,18 @@
-The Fast Iterative Digital Volume Correlation Algorithm (FIDVC) is the next generation DVC algorithm providing significantly improved signal-to-noise, and large (finite) deformation (incl. large rotations and image stretches) capture capability at low computational cost (please see [Bar-Kochba, Toyjanova et al., Exp. Mechanics, 2014](http://link.springer.com/article/10.1007/s11340-014-9874-2?sa_campaign=email/event/articleAuthor/onlineFirst) for more details).
+This repositry contains the Matlab m-files to run our LD 3D TFM algorithm. The first part of the package includes the FIDVC algorithm, which is how the 3D displacement fields are calculated. The second part of the code package includes converting those displacement fields into 3D surface tractions as described in [Toyjanova, Bar-Kochba et al., PloS One, 2014](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0090976).
+
+Depending on the geometry of the problem at hand, the included surface normal finder algorithm might need additional modification for traction calculation in fully embedded systems or on arbitrary geometries. Alternatively, the user can supply the his/her own point-by-point surface normals to calculate the surface tractions (e.g., Matlab has several already existing image processing options for extracting surface normals from rendered surfaces).
+
 
 ### Important pages
-* [Download latest version v1.2!](https://github.com/FranckLab/FIDVC/releases)
-* [Example data](https://drive.google.com/folderview?id=0ByhZqlrbo5srSmU2ZW1TOXpfVkE&usp=sharing)
+* [Download latest version v1.0!](https://github.com/FranckLab/3D-VTFM/releases)
+* [Example data](https://drive.google.com/folderview?id=0ByhZqlrbo5srQ1RDQ3pvZjVRSUU&usp=sharing)
 * [FAQ](https://github.com/FranckLab/FIDVC/blob/master/README.md#faq)
-* [Questions/Issues](https://github.com/FranckLab/FIDVC/issues)
-* [Bug Fixes/history](https://github.com/FranckLab/FIDVC/wiki/Bug-Fixes!)
+* [Questions/Issues](https://github.com/FranckLab/3D-VTFM/issues)
+* [Bug Fixes/history](https://github.com/FranckLab/3D-VTFM/wiki/Bug-Fixes!)
+* [Cite]()
 * [Franck Lab](http://franck.engin.brown.edu)
  
-## Purpose
-The following implementation contains the Matlab m-files for our FIDVC algorithm. The FIDVC algorithm determines the 3D displacement fields between consecutive volumetric image stacks. To provide maximum user versatility the current version is the CPU-based version, which runs a little bit slower (~ 5 - 15 minutes/per stack) than the GPU-based implementation. As Matlab’s GPU-based subroutines become more efficient we hope to provide the GPU-based version at a later release date. 
-
-## Running FIDVC
+## Running 3D-VTFM
 
 ### C Compiler
 To run you need a compatible C compiler. Please see
@@ -26,55 +27,48 @@ To run you need a compatible C compiler. Please see
 ### Running included example case
 1. Make sure that the main files and the supplemental m files (from file exchange) are added to the path in Matlab.
 2. Download and save the [example volume data](https://drive.google.com/folderview?id=0ByhZqlrbo5srSmU2ZW1TOXpfVkE&usp=sharing) in the example folder. 
-3. Run the exampleRunFile.m file to and compare its displacement outputs to the contour plots in the referenced paper ([Bar-Kochba, Toyjanova et al., Exp. Mechanics, 2014](http://link.springer.com/article/10.1007/s11340-014-9874-2?sa_campaign=email/event/articleAuthor/onlineFirst))
+3. Run the exampleRunFile.m file
 
 ### Health warning!
-FIDVC requires a 3D stack to be read in, which depending on the volume size can require a **large amount of RAM** in Matlab.
+FIDVC in the 3D-VTFM requires a 3D stack to be read in, which depending on the volume size can require a **large amount of RAM** in Matlab.
 
 ## Files
 * Main files
- - addDisplacements.m
- - checkConvergenceSSD.m
- - DVC.m
- - filterDisplacements.m
- - funIDVC.m
- - IDVC.m
+ - calculateNormals.m
+ - calculateSurfaceUi.m
+ - findSurface.m
+ - fun3VDTFM.m
  - removeOutliers.m
- - volumeMapping.m
 
 * Supplement m files from the MATLAB file exchange:
  - gridfit.m
  - inpaint_nans.m
  - inpaint_nans3.m
- - mirt3D_mexinterp.cpp
- - mirt3D_mexinterp.m
- - mirt3D_mexinterp.mexw64
 
 * Example Run files
  - exampleRunFile.m
- - [example volume data](https://drive.google.com/folderview?id=0ByhZqlrbo5srSmU2ZW1TOXpfVkE&usp=sharing) (vol00.mat, vol01.mat, resultsFIDVC.mat, outputREsults.pdf, matlab_workspace.mat).
+ - [example volume data](https://drive.google.com/folderview?id=0ByhZqlrbo5srSmU2ZW1TOXpfVkE&usp=sharing) (vol00.mat, vol01.mat).
 
 ## FAQ
 **What are the requirements for the input 3D image stack?**
 
 Please refer to [input 3D Image Stack Requirements](https://github.com/FranckLab/FIDVC/blob/master/README.md#input-3d-image-stack-requirements).
 
-**Can I use FIDVC for finding displacement fields in 2D images?**
-
-No. But you can use [FIDIC](https://github.com/FranckLab/FIDIC), this is 2D version of FIDVC for finding displacments in 2D images. 
 
 ## Cite
 If used please cite:
-[Bar-Kochba E., Toyjanova J., Andrews E., Kim K., Franck C. (2014) A fast iterative digital volume correlation algorithm for large deformations. Experimental Mechanics. doi: 10.1007/s11340-014-9874-2](http://link.springer.com/article/10.1007/s11340-014-9874-2?sa_campaign=email/event/articleAuthor/onlineFirst)
+[Toyjanova J., Hannen, E., Bar-Kochba E., Darling, E.M., Henann, D.L., and Franck, C., (2014) 3D Viscoelastic Traction Force Microscopy. Soft Matter doi: 10.1039/c4sm01271b](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0090976)
 
 ```bibtex
-@article{bar2014fast,
-  title={A fast iterative digital volume correlation algorithm for large deformations},
-  author={Bar-Kochba, E and Toyjanova, J and Andrews, E and Kim, K-S and Franck, C},
-  journal={Experimental Mechanics},
-  pages={1--14},
+@article{toyjanova20143d,
+  title={3D Viscoelastic traction force microscopy},
+  author={Toyjanova, Jennet and Hannen, Erin and Bar-Kochba, Eyal and Darling, Eric M and Henann, David L and Franck, Christian},
+  journal={Soft matter},
+  volume={10},
+  number={40},
+  pages={8095--8106},
   year={2014},
-  publisher={Springer}
+  publisher={Royal Society of Chemistry}
 }
 ```
 
